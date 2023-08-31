@@ -42,6 +42,7 @@ class _JobListScreenState extends State<JobListScreen> {
                     content: "신규등록",
                     onTap: () {
                       locator<NavigationService>().navigateTo(Routes.jobDetail);
+                      Provider.of<JobListScreenModel>(context,listen: false).loadJobs();
                     },
                   ),
                 )
@@ -92,7 +93,8 @@ class _JobListScreenState extends State<JobListScreen> {
                     ),
                   );
                 });
-          }))
+          })),
+          const SizedBox(height: 20,)
         ]));
   }
 

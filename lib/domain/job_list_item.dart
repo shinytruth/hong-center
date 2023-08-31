@@ -5,6 +5,8 @@ part 'job_list_item.g.dart';
 @JsonSerializable()
 class JobListItem {
   int? jobId;
+  int? categoryId;
+  int? memberId;
   String? categoryName;
   String? content;
   String? requestTime;
@@ -18,6 +20,8 @@ class JobListItem {
 
   JobListItem({
     this.jobId,
+    categoryId,
+    memberId,
     this.categoryName,
     this.content,
     this.requestTime,
@@ -28,7 +32,7 @@ class JobListItem {
     this.silverPhoneNumber,
     this.memberPhoneNumber,
     this.hongId,
-  });
+  }) : categoryId = categoryId ?? 1, memberId = memberId ?? 4;
 
   factory JobListItem.fromJson(Map<String, dynamic> json) =>
       _$JobListItemFromJson(json);

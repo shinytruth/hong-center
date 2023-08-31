@@ -8,6 +8,8 @@ part of 'job_list_item.dart';
 
 JobListItem _$JobListItemFromJson(Map<String, dynamic> json) => JobListItem(
       jobId: json['jobId'] as int?,
+      categoryId: json['categoryId'],
+      memberId: json['memberId'],
       categoryName: json['categoryName'] as String?,
       content: json['content'] as String?,
       requestTime: json['requestTime'] as String?,
@@ -23,6 +25,8 @@ JobListItem _$JobListItemFromJson(Map<String, dynamic> json) => JobListItem(
 Map<String, dynamic> _$JobListItemToJson(JobListItem instance) =>
     <String, dynamic>{
       'jobId': instance.jobId,
+      'categoryId': instance.categoryId,
+      'memberId': instance.memberId,
       'categoryName': instance.categoryName,
       'content': instance.content,
       'requestTime': instance.requestTime,

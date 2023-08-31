@@ -2,7 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hong_center/domain/applicant_item.dart';
 import 'package:hong_center/domain/job_list_item.dart';
+import 'package:hong_center/locator.dart';
 import 'package:hong_center/utils/constant.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class JobDetailScreenModel extends ChangeNotifier {
   var dio = Dio();
@@ -42,9 +44,10 @@ class JobDetailScreenModel extends ChangeNotifier {
   }
 
   void save() async {
-    var response = await dio.post('${SERVER_URL}/job', data: job?.toJson());
-
+    var json = job?.toJson();
+    var response = await dio.post('${SERVER_URL}/jobs', data: json);
     print(response);
+    locator<NavigationService>().back();
   }
 
   void assignJobToHong(ApplicantItem applicant) async {
@@ -55,7 +58,6 @@ class JobDetailScreenModel extends ChangeNotifier {
         "${SERVER_URL}/jobs/assign?jobId=${applicant.jobId}&hongId=${applicant.hongId}";
     print(path);
     var future = await dio.post(path);
-
 
     print(future);
   }
