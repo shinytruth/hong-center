@@ -67,8 +67,7 @@ class _JobListScreenState extends State<JobListScreen> {
           Expanded(child:
               Consumer<JobListScreenModel>(builder: (context, model, child) {
             return ListView.builder(
-                // itemCount: model.jobs.length,
-                itemCount: 1,
+                itemCount: model.jobs.length,
                 itemBuilder: (BuildContext context, int index) {
                   JobListItem? job;
                   if (model.jobs.isNotEmpty) {

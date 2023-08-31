@@ -35,7 +35,7 @@ class RouteGenerator {
         return SlideLeftRoute(
             settings: settings,
             page: ChangeNotifierProvider<JobListScreenModel>(
-                create: (context) => JobListScreenModel(),
+                create: (context) => JobListScreenModel()..loadJobs(),
                 child: const JobListScreen()));
 
       case Routes.jobDetail:
@@ -43,7 +43,7 @@ class RouteGenerator {
         return SlideLeftRoute(
             settings: settings,
             page: ChangeNotifierProvider<JobDetailScreenModel>(
-                create: (context) => JobDetailScreenModel(job == null, job),
+                create: (context) => JobDetailScreenModel(job == null, job)..loadApplicants(),
                 child: const JobDetailScreen()));
 
       default:

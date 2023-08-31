@@ -14,8 +14,10 @@ class JobListItem {
   String? requestAddress;
   String? silverPhoneNumber;
   String? memberPhoneNumber;
+  int? hongId;
 
-  JobListItem({this.jobId,
+  JobListItem({
+    this.jobId,
     this.categoryName,
     this.content,
     this.requestTime,
@@ -25,6 +27,7 @@ class JobListItem {
     this.requestAddress,
     this.silverPhoneNumber,
     this.memberPhoneNumber,
+    this.hongId,
   });
 
   factory JobListItem.fromJson(Map<String, dynamic> json) =>
