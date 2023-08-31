@@ -1,0 +1,1 @@
+var SCREEN_WIDTH = 1000.0;

@@ -11,11 +11,16 @@ class MyTheme {
               fontFamily: 'NotoSansKr',
               fontSize: 36,
               fontWeight: FontWeight.w700),
-          bodyLarge: TextStyle(
+          titleMedium: TextStyle(
               color: blackColor,
               fontFamily: 'NotoSansKr',
               fontSize: 25,
               fontWeight: FontWeight.w700),
+          bodyLarge: TextStyle(
+              color: blackColor,
+              fontFamily: 'NotoSansKr',
+              fontSize: 25,
+              fontWeight: FontWeight.w500),
           bodyMedium: TextStyle(
               color: blackColor,
               fontFamily: 'NotoSansKr',

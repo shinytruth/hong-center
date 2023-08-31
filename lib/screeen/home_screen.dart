@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hong_center/locator.dart';
+import 'package:hong_center/routes.dart';
 import 'package:hong_center/widgets/my_app_bar.dart';
 import 'package:hong_center/widgets/my_button.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,7 +34,15 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MyButton(width: 300, height: 50, radius: 24, content: "리스트 조히하기")
+              MyButton(
+                width: 300,
+                height: 50,
+                radius: 24,
+                content: "리스트 조회하기",
+                onTap: () {
+                  locator<NavigationService>().navigateTo(Routes.jobList);
+                },
+              )
             ],
           ),
           const SizedBox(

@@ -15,6 +15,8 @@ JobListItem _$JobListItemFromJson(Map<String, dynamic> json) => JobListItem(
       hongName: json['hongName'] as String?,
       status: json['status'] as String?,
       requestAddress: json['requestAddress'] as String?,
+      silverPhoneNumber: json['silverPhoneNumber'] as String?,
+      memberPhoneNumber: json['memberPhoneNumber'] as String?,
     );
 
 Map<String, dynamic> _$JobListItemToJson(JobListItem instance) =>
@@ -27,4 +29,6 @@ Map<String, dynamic> _$JobListItemToJson(JobListItem instance) =>
       'hongName': instance.hongName,
       'status': instance.status,
       'requestAddress': instance.requestAddress,
+      'silverPhoneNumber': instance.silverPhoneNumber,
+      'memberPhoneNumber': instance.memberPhoneNumber,
     };
